@@ -1,6 +1,6 @@
 # vue-ripple-compoment
 
-> A ripple component of Vue.js
+> A ripple plugin of Vue.js
 
 [Demo](https://ldq-first.github.io/vue-ripple-compoment/dist/#/)
 
