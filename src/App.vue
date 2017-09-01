@@ -36,5 +36,20 @@ body {
   height: 100%;
 }
 
-
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  color: #fff;
+  margin: 12px;
+  background: #7e57c2;
+  border-radius: 2px;
+  height: 36px;
+  line-height: 36px;
+  padding: 0;
+  min-width: 88px;
+  box-shadow: 0 1px 6px rgba(0,0,0,.117647),
+              0 1px 4px rgba(0,0,0,.117647);
+}
 </style>
