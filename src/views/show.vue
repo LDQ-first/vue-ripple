@@ -4,10 +4,10 @@
             <h1>Vue Ripple Component</h1>
         </header>
         <article>
-            <section>
+            <section class="section-btn">
                 <div class="ui">
                     <h2>Button Ripple</h2>
-                    <ripple class="ripbtn">
+                    <ripple class="ripbtn" :isInline="isInline">
                         <button slot="pure" @click="showMoal">showModal</button>
                     </ripple>
                 </div>
@@ -15,6 +15,27 @@
                     <pre><code>{{codeOne.js}}</code></pre>
                     <pre><code>{{codeOne.html}}</code></pre>
                     <pre><code>{{codeOne.css}}</code></pre>
+                </div>
+            </section>
+            <section class="section-pan">
+                <div class="ui">
+                    <h2>Panel Ripple</h2>
+                    <ripple class="ripbtn" children="one">
+                        <div slot="children" class="panel children">
+                            <header>
+                                <h3>Panel</h3>
+                            </header>
+                            <div class="content">
+                                <p>This is a Panel</p>
+                            </div>
+                            <button slot="pure" @click="showMoal" class="btn">showModal</button>
+                        </div>
+                    </ripple>
+                </div>
+                <div class="code" v-hljs>
+                    <pre><code>{{codeTwo.js}}</code></pre>
+                    <pre><code>{{codeTwo.html}}</code></pre>
+                    <pre><code>{{codeTwo.css}}</code></pre>
                 </div>
             </section>
         </article>
@@ -42,7 +63,13 @@
             return {
                 isShowModal: false,
                 modalMessage: 'This is a Modal',
+                isInline: true,
                 codeOne: {
+                    html: '',
+                    css: '',
+                    js: ''
+                },
+                codeTwo: {
                     html: '',
                     css: '',
                     js: ''
@@ -72,6 +99,11 @@
 /*-- js --*/
 const Ripple = resolve => require(['../components/ripple.vue'], resolve)
 export default { 
+    data () {
+        return {
+            isInline: true
+        }
+    },
     components: {
         Ripple
     },
@@ -83,18 +115,79 @@ export default {
 }
 `
                 this.codeOne.html = 
-` <!--html-->
-<ripple class="ripbtn">
+` 
+<!--html-->
+<ripple class="ripbtn" :isInline="isInline">
     <button slot="pure" @click="showMoal">showModal</button>
 </ripple>
 `
                 this.codeOne.css = 
 `
-/*--css--*/
+/*--sass--*/
  .ripbtn {
     margin: 12px;
  }
  `
+                this.codeTwo.js =
+`
+/*-- js --*/
+const Ripple = resolve => require(['../components/ripple.vue'], resolve)
+export default { 
+    components: {
+        Ripple
+    },
+    methods: {
+        showMoal () {
+            this.isShowModal = true
+        }
+    }
+}
+`
+                this.codeTwo.html =
+`
+<!--html-->
+<div class="ui">
+    <h2>Panel Ripple</h2>
+    <ripple class="ripbtn" children="one">
+        <div slot="children" class="panel children">
+            <header>
+                <h3>Panel</h3>
+            </header>
+            <div class="content">
+                <p>This is a Panel</p>
+            </div>
+            <button slot="pure" @click="showMoal" class="ripbtn">showModal</button>
+        </div>
+    </ripple>
+</div>
+`
+                this.codeTwo.css =
+`
+/*--sass--*/
+.section-pan {
+    .rippleWrapper {
+        width: 80%;
+        max-width: 800px;
+        margin: 20px auto;
+    }
+    .panel {
+        border: 2px solid #8BE388; 
+        padding: 20px;
+        background: #EEE;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        header {
+        width: 100%;
+        text-align: left;
+        }
+        .btn {
+            margin: 10px;
+        }
+    }
+}
+`
                 
                   
             }
@@ -104,7 +197,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    h1,h2 {
+    h1,h2,h3,p{
         margin: 10px 0;
     }
     .ripbtn {
@@ -115,4 +208,28 @@ export default {
         max-width: 768px;
         margin: 0 auto;
     }
+    .section-pan {
+        .rippleWrapper {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .panel {
+            border: 2px solid #8BE388; 
+            padding: 20px;
+            background: #EEE;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            header {
+            width: 100%;
+            text-align: left;
+            }
+            .btn {
+                margin: 10px;
+            }
+        }
+    }
+
 </style>

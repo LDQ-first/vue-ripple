@@ -1,5 +1,5 @@
 <template>
-    <div id="ripple">
+    <div class="rippleWrapper" :class="{ib:isInline}">
         <div class="ripple" v-if="children">
             <div class="slot" :class="{one: children === 'one', two: children === 'two'}">
                 <slot name="children"></slot>
@@ -20,6 +20,10 @@
 <script>
 export default {
     props: {
+        isInline: {
+            type: Boolean,
+            required: false
+        },
         speed: {
             type: String,
             required: false
@@ -76,7 +80,7 @@ export default {
 </script>
 
 <style>
-   #ripple {
+   .rippleWrapper.ib {
      display: inline-block;
    }
    .ripple {
