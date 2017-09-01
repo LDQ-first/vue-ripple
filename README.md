@@ -1,4 +1,4 @@
-# vue-ripple-compoment
+# vue-ripple-plugin
 
 > A ripple plugin of Vue.js
 
