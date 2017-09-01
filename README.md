@@ -2,6 +2,8 @@
 
 > A Vue.js project
 
+[预览](https://ldq-first.github.io/vue-ripple-compoment/dist/#/)
+
 ## Build Setup
 
 ``` bash
