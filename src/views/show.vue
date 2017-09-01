@@ -7,7 +7,10 @@
             <section class="section-first">
                 <div class="ui">
                     <h2>Use</h2>
-                    <p></p>
+                    <p class="remind">
+                        <img class="remind-img" src="../assets/icon/resume.svg">
+                        <strong>You should restart vue after finishing install vue-useripple</strong>
+                    </p>
                 </div>
                 <div class="code" v-hljs>
                     <pre><code>{{codeFirst.npm}}</code></pre>
@@ -130,7 +133,7 @@
             <p>
                 source code in Github => 
                 <a href="https://github.com/LDQ-first/vue-ripple-compoment" title="click me">
-                    <img class="github-img" src="../assets/github.svg" >
+                    <img class="github-img" src="../assets/icon/github.svg" >
                 </a>
             </p>
         </footer>
@@ -518,6 +521,20 @@ Vue.use(VueRipple)
     strong {
         margin: 0 20px;
     }
+    .remind {
+        width: 80%;
+        min-width: 800px;
+        margin: 20px auto;
+        border: 2px solid #8BE388; 
+        padding: 20px 0;
+        background: #EEE;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .remind-img {
+            margin: 0 20px;
+        }
+    } 
     .param-list {
         margin: 20px 0;
         .param-list-item {
