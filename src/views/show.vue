@@ -12,7 +12,14 @@
         <footer>
             
         </footer>
-        <modal :mdShow="isShowModal" @close="closeModal"></modal>
+        <modal :mdShow="isShowModal" @close="closeModal">
+            <p slot="message">
+                {{modalMessage}}
+            </p>
+            <div slot="btnGroup" class="btnGroup">
+                <button class="md-close" @click="closeModal">closeModal</button>
+            </div>
+        </modal>
     </div>
 </template>
 
@@ -23,7 +30,8 @@
     export default {
         data () {
             return {
-                isShowModal: false
+                isShowModal: false,
+                modalMessage: 'This is a Modal'
             }
         },
         components: {
@@ -36,6 +44,9 @@
             },
             closeModal () {
                 this.isShowModal = false
+            },
+            setModalMessage (str) {
+                this.modalMessage = str
             }
         }
      }

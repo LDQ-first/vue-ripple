@@ -6,10 +6,10 @@
                 <span class="close" @click="closeModal"></span>
             </header>
             <article>
-                <p>This is a Modal</p>
+                <slot name="message"></slot>
             </article>
             <footer>
-                <button class="md-close" @click="closeModal">closeModal</button>
+                <slot name="btnGroup"></slot>
             </footer>
         </div>
         <div class="md-overlay " v-show="mdShow" @click="closeModal"></div>
@@ -67,6 +67,9 @@
             justify-content: space-between;
             align-items: center;
             margin: 10px 0;
+            h3 {
+                margin: 0;
+            }
         }
         article {
             text-align: left;
