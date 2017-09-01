@@ -20,7 +20,7 @@
             <section class="section-pan">
                 <div class="ui">
                     <h2>Panel Ripple</h2>
-                    <ripple class="ripbtn" children="one">
+                    <ripple class="ripPanel" children="one">
                         <div slot="children" class="panel children">
                             <header>
                                 <h3>Panel</h3>
@@ -36,6 +36,65 @@
                     <pre><code>{{codeTwo.js}}</code></pre>
                     <pre><code>{{codeTwo.html}}</code></pre>
                     <pre><code>{{codeTwo.css}}</code></pre>
+                </div>
+            </section>
+            <section class="section-pan-btn">
+                <div class="ui">
+                    <h2>Panel&Button Ripple</h2>
+                    <ripple class="ripPanel" children="one">
+                        <div slot="children" class="panel children">
+                            <header>
+                                <h3>PanelBtn</h3>
+                            </header>
+                            <div class="content">
+                                <p>This is a Panel&Button</p>
+                            </div>
+                            <footer>
+                                <ripple class="ripbtn" :isInline="isInline">
+                                    <button slot="pure" @click="showMoal">showModal</button>
+                                </ripple>
+                            </footer>
+                        </div>
+                    </ripple>
+                </div>
+                <div class="code" v-hljs>
+                    <pre><code>{{codeThree.js}}</code></pre>
+                    <pre><code>{{codeThree.html}}</code></pre>
+                    <pre><code>{{codeThree.css}}</code></pre>
+                </div>
+            </section>
+            <section class="section-param">
+                <div class="ui">
+                    <h2>Param Ripple</h2>
+                    <ripple class="ripPanel" children="one">
+                        <div slot="children" class="panel children">
+                            <header>
+                                <h3>Param</h3>
+                            </header>
+                            <div class="content">
+                                <p>This is a Param</p>
+                                <ripple class="ripbtn" :isInline="isInline" speed="2">
+                                    <button slot="pure">speed</button>
+                                </ripple>
+                                <ripple class="ripbtn" :isInline="isInline" bg="#2B72D6">
+                                    <button slot="pure">background</button>
+                                </ripple>
+                                <ripple class="ripbtn" :isInline="isInline" :br="br">
+                                    <button slot="pure" class="br">borderRadius</button>
+                                </ripple>
+                            </div>
+                            <footer>
+                                <ripple class="ripbtn" :isInline="isInline">
+                                    <button slot="pure" @click="showMoal">showModal</button>
+                                </ripple>
+                            </footer>
+                        </div>
+                    </ripple>
+                </div>
+                <div class="code" v-hljs>
+                    <pre><code>{{codeFour.js}}</code></pre>
+                    <pre><code>{{codeFour.html}}</code></pre>
+                    <pre><code>{{codeFour.css}}</code></pre>
                 </div>
             </section>
         </article>
@@ -64,6 +123,7 @@
                 isShowModal: false,
                 modalMessage: 'This is a Modal',
                 isInline: true,
+                br: true,
                 codeOne: {
                     html: '',
                     css: '',
@@ -73,7 +133,17 @@
                     html: '',
                     css: '',
                     js: ''
-                }
+                },
+                codeThree: {
+                    html: '',
+                    css: '',
+                    js: ''
+                },
+                codeFour: {
+                    html: '',
+                    css: '',
+                    js: ''
+                },
             }
         },
         components: {
@@ -95,82 +165,76 @@
             },
             setCode () {
                 this.codeOne.js =
-`
-/*-- js --*/
-const Ripple = resolve => require(['../components/ripple.vue'], resolve)
-export default { 
-    data () {
-        return {
-            isInline: true
-        }
-    },
-    components: {
-        Ripple
-    },
-    methods: {
-        showMoal () {
-            this.isShowModal = true
-        }
-    }
-}
-`
-                this.codeOne.html = 
-` 
-<!--html-->
-<ripple class="ripbtn" :isInline="isInline">
-    <button slot="pure" @click="showMoal">showModal</button>
-</ripple>
-`
-                this.codeOne.css = 
-`
-/*--sass--*/
- .ripbtn {
-    margin: 12px;
- }
- `
-                this.codeTwo.js =
-`
-/*-- js --*/
-const Ripple = resolve => require(['../components/ripple.vue'], resolve)
-export default { 
-    components: {
-        Ripple
-    },
-    methods: {
-        showMoal () {
-            this.isShowModal = true
+    `
+    /*-- js --*/
+    const Ripple = resolve => require(['../components/ripple.vue'], resolve)
+    export default { 
+        data () {
+            return {
+                isInline: true
+            }
+        },
+        components: {
+            Ripple
+        },
+        methods: {
+            showMoal () {
+                this.isShowModal = true
+            }
         }
     }
-}
-`
-                this.codeTwo.html =
-`
-<!--html-->
-<div class="ui">
-    <h2>Panel Ripple</h2>
-    <ripple class="ripbtn" children="one">
-        <div slot="children" class="panel children">
-            <header>
-                <h3>Panel</h3>
-            </header>
-            <div class="content">
-                <p>This is a Panel</p>
-            </div>
-            <button slot="pure" @click="showMoal" class="ripbtn">showModal</button>
-        </div>
+    `
+                    this.codeOne.html = 
+    ` 
+    <!--html-->
+    <ripple class="ripbtn" :isInline="isInline">
+        <button slot="pure" @click="showMoal">showModal</button>
     </ripple>
-</div>
-`
-                this.codeTwo.css =
-`
-/*--sass--*/
-.section-pan {
-    .rippleWrapper {
-        width: 80%;
-        max-width: 800px;
-        margin: 20px auto;
+    `
+                    this.codeOne.css = 
+    `
+    /*--sass--*/
+    .ripbtn {
+        margin: 12px;
     }
-    .panel {
+    `
+                    this.codeTwo.js =
+    `
+    /*-- js --*/
+    const Ripple = resolve => require(['../components/ripple.vue'], resolve)
+    export default { 
+        components: {
+            Ripple
+        },
+        methods: {
+            showMoal () {
+                this.isShowModal = true
+            }
+        }
+    }
+    `
+                    this.codeTwo.html =
+    `
+    <!--html-->
+    <div class="ui">
+        <h2>Panel Ripple</h2>
+        <ripple class="ripbtn" children="one">
+            <div slot="children" class="panel children">
+                <header>
+                    <h3>Panel</h3>
+                </header>
+                <div class="content">
+                    <p>This is a Panel</p>
+                </div>
+                <button slot="pure" @click="showMoal" class="ripbtn">showModal</button>
+            </div>
+        </ripple>
+    </div>
+    `
+                    this.codeTwo.css =
+    `
+    /*--sass--*/
+    @mixin panel {
         border: 2px solid #8BE388; 
         padding: 20px;
         background: #EEE;
@@ -179,15 +243,189 @@ export default {
         justify-content: center;
         align-items: center;
         header {
-        width: 100%;
-        text-align: left;
+            width: 100%;
+            text-align: left;
+        } 
+        .content {
+            margin: 20px 0;
+        }
+    }
+    .section-pan {
+        .rippleWrapper {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .panel {
+            @include panel
         }
         .btn {
             margin: 10px;
         }
     }
-}
-`
+    `
+                this.codeThree.js = 
+    `
+    /*-- js --*/
+    const Ripple = resolve => require(['../components/ripple.vue'], resolve)
+    export default { 
+        data () {
+            return {
+                isInline: true
+            }
+        },
+        components: {
+            Ripple
+        },
+        methods: {
+            showMoal () {
+                this.isShowModal = true
+            }
+        }
+    }
+
+    `
+                this.codeThree.html = 
+    `
+    <!--html-->
+    <div class="ui">
+        <h2>Panel&Button Ripple</h2>
+        <ripple class="ripPanel" children="one">
+            <div slot="children" class="panel children">
+                <header>
+                    <h3>Panel</h3>
+                </header>
+                <div class="content">
+                    <p>This is a Panel</p>
+                </div>
+                <footer>
+                    <ripple class="ripbtn" :isInline="isInline">
+                        <button slot="pure" @click="showMoal">showModal</button>
+                    </ripple>
+                </footer>
+            </div>
+        </ripple>
+    </div>
+    `
+                this.codeThree.css = 
+    `
+    /*--sass--*/
+    @mixin panel {
+        border: 2px solid #8BE388; 
+        padding: 20px;
+        background: #EEE;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        header {
+            width: 100%;
+            text-align: left;
+        } 
+        .content {
+            margin: 20px 0;
+        }
+    }
+    .section-pan-btn {
+        .ripPanel.rippleWrapper {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .panel {
+             @include panel
+        }
+    }
+    `
+                this.codeFour.js = 
+    `
+    /*-- js --*/
+    const Ripple = resolve => require(['../components/ripple.vue'], resolve)
+    export default { 
+        data () {
+            return {
+                isInline: true,
+                br: true
+            }
+        },
+        components: {
+            Ripple
+        },
+        methods: {
+            showMoal () {
+                this.isShowModal = true
+            }
+        }
+    }
+
+    `
+                this.codeFour.html = 
+    `
+    <!--html-->
+    <div class="ui">
+        <h2>Param Ripple</h2>
+        <ripple class="ripPanel" children="one">
+            <div slot="children" class="panel children">
+                <header>
+                    <h3>Param</h3>
+                </header>
+                <div class="content">
+                    <p>This is a Param</p>
+                    <ripple class="ripbtn" :isInline="isInline" speed="2">
+                        <button slot="pure">speed</button>
+                    </ripple>
+                    <ripple class="ripbtn" :isInline="isInline" bg="#2B72D6">
+                        <button slot="pure">background</button>
+                    </ripple>
+                    <ripple class="ripbtn" :isInline="isInline" :br="br">
+                        <button slot="pure" class="br">borderRadius</button>
+                    </ripple>
+                </div>
+                <footer>
+                    <ripple class="ripbtn" :isInline="isInline">
+                        <button slot="pure" @click="showMoal">showModal</button>
+                    </ripple>
+                </footer>
+            </div>
+        </ripple>
+    </div>
+    
+    `
+                this.codeFour.css = 
+    `
+    /*--sass--*/
+    @mixin panel {
+        border: 2px solid #8BE388; 
+        padding: 20px;
+        background: #EEE;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        header {
+            width: 100%;
+            text-align: left;
+        } 
+        .content {
+            margin: 20px 0;
+        }
+    }
+    .section-param {
+        .ripPanel.rippleWrapper {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .panel {
+             @include panel
+        }
+        .br {
+            width: 88px;
+            height: 88px;
+        }
+    }
+    `
+
                 
                   
             }
@@ -200,6 +438,9 @@ export default {
     h1,h2,h3,p{
         margin: 10px 0;
     }
+    section {
+        margin: 30px 0;
+    }
     .ripbtn {
         margin: 12px;
     }
@@ -208,6 +449,22 @@ export default {
         max-width: 768px;
         margin: 0 auto;
     }
+    @mixin panel {
+        border: 2px solid #8BE388; 
+        padding: 20px;
+        background: #EEE;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        header {
+            width: 100%;
+            text-align: left;
+        } 
+        .content {
+            margin: 20px 0;
+        }
+    }
     .section-pan {
         .rippleWrapper {
             width: 80%;
@@ -215,20 +472,34 @@ export default {
             margin: 20px auto;
         }
         .panel {
-            border: 2px solid #8BE388; 
-            padding: 20px;
-            background: #EEE;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            header {
-            width: 100%;
-            text-align: left;
-            }
-            .btn {
-                margin: 10px;
-            }
+            @include panel
+        }
+        .btn {
+            margin: 10px;
+        }
+    }
+    .section-pan-btn {
+        .ripPanel.rippleWrapper {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .panel {
+             @include panel
+        }
+    }
+    .section-param {
+        .ripPanel.rippleWrapper {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .panel {
+             @include panel
+        }
+        .br {
+            width: 88px;
+            height: 88px;
         }
     }
 

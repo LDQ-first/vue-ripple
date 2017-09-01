@@ -53,6 +53,7 @@ export default {
             }
             this.animate = true
             const button = this.$refs.covButtonRipple
+            console.log('button: ', button)
             const ripple = this.$refs.covRipple
             const timer = (this.speed * 1000 || 650) + 20 
             if (ripple) {
@@ -89,7 +90,7 @@ export default {
    .slot {
       position: relative;
    }
-   .slot.one .children * {
+   .slot.one .children>* {
         position: relative;
         z-index: 1;
     }
