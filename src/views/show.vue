@@ -73,6 +73,11 @@
                             </header>
                             <div class="content">
                                 <p>This is a Param</p>
+                                <ul class="param-list">
+                                    <li class="param-list-item"><strong>speed</strong>  type: String</li>
+                                    <li class="param-list-item"><strong>bg</strong>  type: String</li>
+                                    <li class="param-list-item"><strong>br</strong>  type: Boolean</li>
+                                </ul>
                                 <ripple class="ripbtn" :isInline="isInline" speed="2">
                                     <button slot="pure">speed</button>
                                 </ripple>
@@ -99,7 +104,13 @@
             </section>
         </article>
         <footer>
-            
+            <p>Copyright by <a href="https://github.com/LDQ-first">LDQ-first</a> (◕ᴗ◕)</p>
+            <p>
+                source code in Github => 
+                <a href="https://github.com/LDQ-first/vue-ripple-compoment" title="click me">
+                    <img class="github-img" src="../assets/github.svg" >
+                </a>
+            </p>
         </footer>
         <modal :mdShow="isShowModal" @close="closeModal">
             <p slot="message">
@@ -371,6 +382,11 @@
                 </header>
                 <div class="content">
                     <p>This is a Param</p>
+                    <ul class="param-list">
+                        <li class="param-list-item"><strong>speed</strong>  type: String</li>
+                        <li class="param-list-item"><strong>bg</strong>  type: String</li>
+                        <li class="param-list-item"><strong>br</strong>  type: Boolean</li>
+                    </ul>
                     <ripple class="ripbtn" :isInline="isInline" speed="2">
                         <button slot="pure">speed</button>
                     </ripple>
@@ -394,6 +410,15 @@
                 this.codeFour.css = 
     `
     /*--sass--*/
+    strong {
+        margin: 0 20px;
+    }
+    .param-list {
+        margin: 20px 0;
+        .param-list-item {
+            margin: 20px 0;
+        }
+    }
     @mixin panel {
         border: 2px solid #8BE388; 
         padding: 20px;
@@ -420,8 +445,8 @@
              @include panel
         }
         .br {
-            width: 88px;
-            height: 88px;
+            width: 90px;
+            height: 90px;
         }
     }
     `
@@ -435,11 +460,35 @@
 </script>
 
 <style lang="scss" scoped>
-    h1,h2,h3,p{
+    h1, h2, h3, p{
         margin: 10px 0;
     }
-    section {
-        margin: 30px 0;
+    section, footer {
+        margin: 50px 0;
+    }
+    strong {
+        margin: 0 20px;
+    }
+    .param-list {
+        margin: 20px 0;
+        .param-list-item {
+            margin: 20px 0;
+        }
+    }
+    .github-img {
+        width: 30px;
+        vertical-align: bottom;
+        margin: 0 10px;
+        animation: sway 2s ease-in-out infinite alternate;
+        transform-origin: 50% 100%;
+    }
+    @keyframes sway {
+        0% {
+            transform: rotate(-35deg)
+        }
+        100% {
+            transform: rotate(35deg)
+        }
     }
     .ripbtn {
         margin: 12px;
@@ -498,9 +547,10 @@
              @include panel
         }
         .br {
-            width: 88px;
-            height: 88px;
+            width: 90px;
+            height: 90px;
         }
     }
+    
 
 </style>

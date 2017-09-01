@@ -41,6 +41,20 @@ body {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+  color: #0060E9;
+  &:hover {
+    text-decoration: underline;
+    color: #FF6C09;
+  }
+}
+
+ul, li {
+  list-style: none;
+}
+
+
 ::-webkit-scrollbar {
     width: 0.5em
 }
@@ -57,6 +71,7 @@ body {
 }
 
 button {
+  display: inline-block;
   cursor: pointer;
   border: none;
   outline: none;
@@ -69,8 +84,8 @@ button {
   line-height: 36px;
   padding: 0;
   min-width: 88px;
-  box-shadow: 0 1px 6px rgba(0,0,0,.117647),
-              0 1px 4px rgba(0,0,0,.117647);
+  box-shadow: 0 1px 6px rgba(0,0,0,.4),
+              0 1px 4px rgba(0,0,0,.2);
 }
 pre {
     border: 2px solid #8BE388;
