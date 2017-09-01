@@ -41,7 +41,7 @@
                             <div class="content">
                                 <p>This is a Panel</p>
                             </div>
-                            <button slot="pure" @click="showMoal" class="btn">showModal</button>
+                            <button @click="showMoal" class="btn">showModal</button>
                         </div>
                     </ripple>
                 </div>
@@ -131,8 +131,14 @@
         <footer>
             <p>Copyright {{copyRightYear}} © by <a href="https://github.com/LDQ-first">LDQ-first</a> (◕ᴗ◕)</p>
             <p>
-                source code in Github => 
+                demo source code in Github => 
                 <a href="https://github.com/LDQ-first/vue-ripple-compoment" title="click me">
+                    <img class="github-img" src="../assets/icon/github.svg" >
+                </a>
+            </p>
+            <p>
+                vue component source code in Github => 
+                <a href="https://github.com/LDQ-first/vue-useripple" title="click me">
                     <img class="github-img" src="../assets/icon/github.svg" >
                 </a>
             </p>
@@ -282,7 +288,7 @@ Vue.use(VueRipple)
                 <div class="content">
                     <p>This is a Panel</p>
                 </div>
-                <button slot="pure" @click="showMoal" class="ripbtn">showModal</button>
+                <button @click="showMoal" class="ripbtn">showModal</button>
             </div>
         </ripple>
     </div>
