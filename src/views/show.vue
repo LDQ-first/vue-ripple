@@ -74,9 +74,21 @@
                             <div class="content">
                                 <p>This is a Param</p>
                                 <ul class="param-list">
-                                    <li class="param-list-item"><strong>speed</strong>  type: String</li>
-                                    <li class="param-list-item"><strong>bg</strong>  type: String</li>
-                                    <li class="param-list-item"><strong>br</strong>  type: Boolean</li>
+                                    <li class="param-list-item">
+                                        <strong>speed</strong>  
+                                        <span class="des">type: String</span>
+                                        <span class="des">default: 0.65s</span>
+                                    </li>
+                                    <li class="param-list-item">
+                                        <strong>bg</strong>  
+                                        <span class="des">type: String</span>
+                                        <span class="des">default: #D8C9F8</span>
+                                    </li>
+                                    <li class="param-list-item">
+                                        <strong>br</strong>  
+                                        <span class="des">type: Boolean</span>
+                                        <span class="des">default: false</span>
+                                    </li>
                                 </ul>
                                 <ripple class="ripbtn" :isInline="isInline" speed="2">
                                     <button slot="pure">speed</button>
@@ -383,9 +395,21 @@
                 <div class="content">
                     <p>This is a Param</p>
                     <ul class="param-list">
-                        <li class="param-list-item"><strong>speed</strong>  type: String</li>
-                        <li class="param-list-item"><strong>bg</strong>  type: String</li>
-                        <li class="param-list-item"><strong>br</strong>  type: Boolean</li>
+                        <li class="param-list-item">
+                            <strong>speed</strong>  
+                            <span class="des">type: String</span>
+                            <span class="des">default: 0.65s</span>
+                        </li>
+                        <li class="param-list-item">
+                            <strong>bg</strong>  
+                            <span class="des">type: String</span>
+                            <span class="des">default: #D8C9F8</span>
+                        </li>
+                        <li class="param-list-item">
+                            <strong>br</strong>  
+                            <span class="des">type: Boolean</span>
+                            <span class="des">default: false</span>
+                        </li>
                     </ul>
                     <ripple class="ripbtn" :isInline="isInline" speed="2">
                         <button slot="pure">speed</button>
@@ -447,6 +471,9 @@
         .br {
             width: 90px;
             height: 90px;
+        }
+        .des {
+            margin: 0 10px;
         }
     }
     `
@@ -549,6 +576,9 @@
         .br {
             width: 90px;
             height: 90px;
+        }
+        .des {
+            margin: 0 10px;
         }
     }
     
