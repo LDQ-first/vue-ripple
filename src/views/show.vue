@@ -1,7 +1,7 @@
 <template>
     <div class="show">
         <header>
-            <h1>Vue Ripple Component</h1>
+            <h1>Vue Ripple Plugin</h1>
         </header>
         <article>
             <section class="section-first">
@@ -137,7 +137,7 @@
                 </a>
             </p>
             <p>
-                vue component source code in Github => 
+                vue plugin source code in Github => 
                 <a href="https://github.com/LDQ-first/vue-useripple" title="click me">
                     <img class="github-img" src="../assets/icon/github.svg" >
                 </a>
