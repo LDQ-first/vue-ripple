@@ -132,7 +132,7 @@
             <p>Copyright {{copyRightYear}} © by <a href="https://github.com/LDQ-first">LDQ-first</a> (◕ᴗ◕)</p>
             <p>
                 demo source code in Github => 
-                <a href="https://github.com/LDQ-first/vue-ripple-compoment" title="click me">
+                <a href="https://github.com/LDQ-first/vue-ripple-plugin" title="click me">
                     <img class="github-img" src="../assets/icon/github.svg" >
                 </a>
             </p>
