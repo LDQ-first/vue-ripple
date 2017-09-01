@@ -62,6 +62,10 @@
                     0 15px 20px rgba(0,0,0,.219608);
         width: 75%;
         max-width: 768px;
+        animation: move 0.8s ease-in-out;
+        &:hover {
+            background: rgba(255, 255, 255, 1);
+        }
         header {
             display: flex;
             justify-content: space-between;
@@ -77,6 +81,16 @@
         }
         footer {
             margin: 10px 0;
+        }
+    }
+    @keyframes move {
+        0% {
+            opacity: 0;
+            transform: translateY(50%);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0%);
         }
     }
     .close {

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="ripple">
         <div class="ripple" v-if="children">
             <div class="slot" :class="{one: children === 'one', two: children === 'two'}">
                 <slot name="children"></slot>
@@ -76,6 +76,9 @@ export default {
 </script>
 
 <style>
+   #ripple {
+     display: inline-block;
+   }
    .ripple {
        position: relative;
    }

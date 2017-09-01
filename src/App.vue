@@ -22,7 +22,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
 html {
@@ -36,13 +35,33 @@ body {
   height: 100%;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+    width: 0.5em
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 0.25em;
+    background: #ceb9d1
+}
+
+::-webkit-scrollbar-thumb {
+    height: 0.5em;
+    border-radius: 0.25em;
+    background: #498bd6 linear-gradient(180deg,#fff,rgba(3,169,244,.5),#0277bd)
+}
+
 button {
   cursor: pointer;
   border: none;
   outline: none;
   -webkit-appearance: none;
   color: #fff;
-  margin: 12px;
+  overflow: hidden;
   background: #7e57c2;
   border-radius: 2px;
   height: 36px;
@@ -51,5 +70,20 @@ button {
   min-width: 88px;
   box-shadow: 0 1px 6px rgba(0,0,0,.117647),
               0 1px 4px rgba(0,0,0,.117647);
+}
+pre {
+    border: 2px solid #8BE388;
+    tab-size: 4;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+pre + pre {
+  margin-top: 0.5em;
+}
+code {
+    font-family: Consolas,Monaco;
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: left;
 }
 </style>
