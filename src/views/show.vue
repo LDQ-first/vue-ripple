@@ -159,7 +159,7 @@
     const Modal = resolve => require(['../components/modal.vue'], resolve)
     
     export default {
-        data () {
+        data () { 
             return {
                 codeFirst: {
                     npm: '',
