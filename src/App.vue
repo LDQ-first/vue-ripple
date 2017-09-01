@@ -7,6 +7,7 @@
 <script>
 import Show from './views/show.vue'
 
+
 export default {
   name: 'app',
   components: {

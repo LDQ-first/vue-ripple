@@ -53,7 +53,6 @@ export default {
             }
             this.animate = true
             const button = this.$refs.covButtonRipple
-            console.log('button: ', button)
             const ripple = this.$refs.covRipple
             const timer = (this.speed * 1000 || 650) + 20 
             if (ripple) {

@@ -4,6 +4,16 @@
             <h1>Vue Ripple Component</h1>
         </header>
         <article>
+            <section class="section-first">
+                <div class="ui">
+                    <h2>Use</h2>
+                    <p></p>
+                </div>
+                <div class="code" v-hljs>
+                    <pre><code>{{codeFirst.npm}}</code></pre>
+                    <pre><code>{{codeFirst.js}}</code></pre>
+                </div>
+            </section>
             <section class="section-btn">
                 <div class="ui">
                     <h2>Button Ripple</h2>
@@ -116,7 +126,7 @@
             </section>
         </article>
         <footer>
-            <p>Copyright by <a href="https://github.com/LDQ-first">LDQ-first</a> (◕ᴗ◕)</p>
+            <p>Copyright {{copyRightYear}} © by <a href="https://github.com/LDQ-first">LDQ-first</a> (◕ᴗ◕)</p>
             <p>
                 source code in Github => 
                 <a href="https://github.com/LDQ-first/vue-ripple-compoment" title="click me">
@@ -136,13 +146,17 @@
 </template>
 
 <script>
-    const Ripple = resolve => require(['../components/ripple.vue'], resolve)
+   /* const Ripple = resolve => require(['../components/ripple.vue'], resolve)*/
     const Modal = resolve => require(['../components/modal.vue'], resolve)
     
-
     export default {
         data () {
             return {
+                codeFirst: {
+                    npm: '',
+                    js: ''
+                },
+                copyRightYear: '',
                 isShowModal: false,
                 modalMessage: 'This is a Modal',
                 isInline: true,
@@ -170,11 +184,12 @@
             }
         },
         components: {
-            Ripple,
+            /*Ripple,*/
             Modal
         },
         created () {
             this.setCode()
+            this.setYear()
         },
         methods: {
             showMoal () {
@@ -186,19 +201,38 @@
             setModalMessage (str) {
                 this.modalMessage = str
             },
+            setYear () {
+                const year = new Date().getFullYear()
+                console.log(year)
+                if(year === 2017) {
+                     this.copyRightYear = 2017
+                } else {
+                    this.copyRightYear = 2017 + ' - ' + year
+                }
+                
+            },
             setCode () {
+                this.codeFirst.npm =
+`
+/*-- npm --*/
+npm install --save vue-useripple
+
+`
+                this.codeFirst.js = 
+`
+/*-- main.js --*/
+import Vue from 'vue'
+import VueRipple from 'vue-useripple'
+Vue.use(VueRipple)
+`
                 this.codeOne.js =
     `
     /*-- js --*/
-    const Ripple = resolve => require(['../components/ripple.vue'], resolve)
     export default { 
         data () {
             return {
                 isInline: true
             }
-        },
-        components: {
-            Ripple
         },
         methods: {
             showMoal () {
@@ -224,11 +258,7 @@
                     this.codeTwo.js =
     `
     /*-- js --*/
-    const Ripple = resolve => require(['../components/ripple.vue'], resolve)
     export default { 
-        components: {
-            Ripple
-        },
         methods: {
             showMoal () {
                 this.isShowModal = true
@@ -290,15 +320,11 @@
                 this.codeThree.js = 
     `
     /*-- js --*/
-    const Ripple = resolve => require(['../components/ripple.vue'], resolve)
     export default { 
         data () {
             return {
                 isInline: true
             }
-        },
-        components: {
-            Ripple
         },
         methods: {
             showMoal () {
@@ -363,16 +389,12 @@
                 this.codeFour.js = 
     `
     /*-- js --*/
-    const Ripple = resolve => require(['../components/ripple.vue'], resolve)
     export default { 
         data () {
             return {
                 isInline: true,
                 br: true
             }
-        },
-        components: {
-            Ripple
         },
         methods: {
             showMoal () {
@@ -469,8 +491,8 @@
              @include panel
         }
         .br {
-            width: 90px;
-            height: 90px;
+            width: 88px;
+            height: 88px;
         }
         .des {
             margin: 0 10px;
@@ -574,8 +596,8 @@
              @include panel
         }
         .br {
-            width: 90px;
-            height: 90px;
+            width: 88px;
+            height: 88px;
         }
         .des {
             margin: 0 10px;

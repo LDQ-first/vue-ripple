@@ -5,6 +5,10 @@ import App from './App'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/atom-one-dark.css'
 
+import VueRipple from 'vue-useripple'
+Vue.use(VueRipple)
+
+
 Vue.config.productionTip = false
 
 Vue.directive('hljs', (e) => {
