@@ -4,6 +4,8 @@
 
 [预览](https://ldq-first.github.io/vue-ripple-compoment/dist/#/)
 
+[more detail of use](https://github.com/LDQ-first/vue-ripple-compoment/tree/master/src/views/show.vue)
+
 ## Use
 ``` javascript
 /*-- npm --*/
@@ -80,7 +82,7 @@ Vue.use(VueRipple)
 </template>
 ```
 
-[more detail of use](https://github.com/LDQ-first/vue-ripple-compoment/tree/master/src/views/show.vue)
+## param
 
 
 ``` javascript

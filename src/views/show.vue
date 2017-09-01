@@ -212,7 +212,6 @@
             },
             setYear () {
                 const year = new Date().getFullYear()
-                console.log(year)
                 if(year === 2017) {
                      this.copyRightYear = 2017
                 } else {
@@ -222,18 +221,18 @@
             },
             setCode () {
                 this.codeFirst.npm =
-`
-/*-- npm --*/
-npm install --save vue-useripple
+    `
+    /*-- npm --*/
+    npm install --save vue-useripple
 
-`
-                this.codeFirst.js = 
-`
-/*-- main.js --*/
-import Vue from 'vue'
-import VueRipple from 'vue-useripple'
-Vue.use(VueRipple)
-`
+    `
+                    this.codeFirst.js = 
+    `
+    /*-- main.js --*/
+    import Vue from 'vue'
+    import VueRipple from 'vue-useripple'
+    Vue.use(VueRipple)
+    `
                 this.codeOne.js =
     `
     /*-- js --*/
@@ -529,7 +528,7 @@ Vue.use(VueRipple)
     }
     .remind {
         width: 80%;
-        min-width: 800px;
+        max-width: 800px;
         margin: 20px auto;
         border: 2px solid #8BE388; 
         padding: 20px 0;
